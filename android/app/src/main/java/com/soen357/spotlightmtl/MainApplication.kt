@@ -1,4 +1,4 @@
-package com.spotlightmtl
+package com.soen357.spotlightmtl
 
 import android.app.Application
 import com.facebook.react.PackageList

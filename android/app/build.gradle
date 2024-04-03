@@ -74,13 +74,14 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.spotlightmtl"
+    namespace "com.soen357.spotlightmtl"
     defaultConfig {
-        applicationId "com.spotlightmtl"
+        applicationId "com.soen357.spotlightmtl"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [auth0Domain: "dev-082gzdfo6ikj1l5k.us.auth0.com", auth0Scheme: "${applicationId}"]
     }
     signingConfigs {
         debug {
