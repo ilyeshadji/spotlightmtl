@@ -28,8 +28,8 @@ app.use(
 app.use(cors());
 
 //Declaring Middlewares
-// const bookInventoryRoutes = require("./routes/book");
-// const HttpError = require("./models/http-error");
+const eventRoutes = require("./routes/eventRoutes");
+const HttpError = require("./models/http-error");
 
 //To parse any request that has a body
 app.use(express.urlencoded({ extended: true }));
@@ -37,7 +37,7 @@ app.use(methodOverride("_method"));
 app.use(express.json());
 
 //Adding Middlewares to app
-// app.use("/api/inventory", bookInventoryRoutes);
+app.use("/api/event", eventRoutes);
 
 //Maybe to remove
 //Throws error if route doesn't exist
