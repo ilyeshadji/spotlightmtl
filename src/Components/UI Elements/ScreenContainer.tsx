@@ -1,12 +1,21 @@
 import * as React from 'react';
 import styled from 'styled-components/native';
+import { Keyboard, TouchableWithoutFeedback } from 'react-native';
 
 interface Props {
     children: React.ReactNode;
 }
 
 function ScreenContainer({ children }: Props) {
-    return <Container>{children}</Container>;
+    function onPress() {
+        Keyboard.dismiss();
+    }
+
+    return (
+        <TouchableWithoutFeedback onPress={onPress} accessible={false}>
+            <Container>{children}</Container>
+        </TouchableWithoutFeedback>
+    );
 }
 
 const Container = styled.SafeAreaView`

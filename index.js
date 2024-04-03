@@ -3,15 +3,16 @@
  */
 
 import { AppRegistry } from 'react-native';
-import App from './src/App';
+import { App } from './src/App';
 import { name as appName } from './app.json';
-import { PaperProvider } from 'react-native-paper';
+import { store } from './src/store/store';
+import { Provider } from 'react-redux';
 
 export default function Main() {
     return (
-        <PaperProvider>
+        <Provider store={store}>
             <App />
-        </PaperProvider>
+        </Provider>
     );
 }
 
