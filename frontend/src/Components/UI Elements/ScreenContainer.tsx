@@ -11,11 +11,13 @@ function ScreenContainer({ children }: Props) {
         Keyboard.dismiss();
     }
 
-    return (
-        <TouchableWithoutFeedback onPress={onPress} accessible={false}>
-            <Container>{children}</Container>
-        </TouchableWithoutFeedback>
-    );
+    // return (
+    //     <TouchableWithoutFeedback onPress={onPress} accessible={false}>
+    //         <Container>{children}</Container>
+    //     </TouchableWithoutFeedback>
+    // );
+
+    return <Container>{children}</Container>;
 }
 
 const Container = styled.SafeAreaView`
@@ -23,6 +25,7 @@ const Container = styled.SafeAreaView`
     flex: 1;
     justify-content: center;
     align-items: center;
+    padding-bottom: 10px;
 `;
 
 export default ScreenContainer;
