@@ -3,11 +3,9 @@ import { useState } from 'react';
 import styled from 'styled-components/native';
 import ScreenContainer from '../Components/UI Elements/ScreenContainer.tsx';
 
-import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../Navigation/MainNavigation.tsx';
-import Toast from 'react-native-toast-message';
 import Toaster from '../plugins/Toaster.ts';
 import { Storage } from '../App.tsx';
 
