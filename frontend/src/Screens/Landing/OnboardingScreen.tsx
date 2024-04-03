@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { useState } from 'react';
 import styled from 'styled-components/native';
-import ScreenContainer from '../Components/UI Elements/ScreenContainer.tsx';
+import ScreenContainer from '../../Components/UI Elements/ScreenContainer.tsx';
 
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../Navigation/MainNavigation.tsx';
-import Toaster from '../plugins/Toaster.ts';
-import { Storage } from '../App.tsx';
+import { RootStackParamList } from '../../Navigation/LandingNavigation.tsx';
+import Toaster from '../../plugins/Toaster.ts';
+import { Storage } from '../../App.tsx';
 
 function OnboardingScreen() {
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
@@ -26,7 +26,7 @@ function OnboardingScreen() {
 
         if (PIN === input) {
             await Storage.setPIN(PIN);
-            navigation.navigate('Home');
+            navigation.navigate('Home', { screen: 'Home' });
             return;
         }
 

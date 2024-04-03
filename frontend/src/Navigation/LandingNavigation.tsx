@@ -1,29 +1,31 @@
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from '../Screens/HomeScreen.tsx';
-import LandingScreen from '../Screens/LandingScreen.tsx';
+import LandingScreen from '../Screens/Landing/LandingScreen.tsx';
+import HomeTabs from './HomeNavigation.tsx';
 
 const Stack = createNativeStackNavigator();
 
 export type RootStackParamList = {
-    Home: undefined;
+    Home: {
+        screen: string;
+    };
 };
 
-function MainNavigation() {
+function LandingNavigation() {
     return (
         <Stack.Navigator>
             <Stack.Screen
-                name={'Login'}
+                name={'Landing'}
                 component={LandingScreen}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
                 name={'Home'}
-                component={HomeScreen}
+                component={HomeTabs}
                 options={{ headerShown: false }}
             />
         </Stack.Navigator>
     );
 }
 
-export default MainNavigation;
+export default LandingNavigation;

@@ -1,12 +1,12 @@
 import * as React from 'react';
 import styled from 'styled-components/native';
-import ScreenContainer from '../Components/UI Elements/ScreenContainer.tsx';
+import ScreenContainer from '../../Components/UI Elements/ScreenContainer.tsx';
 import { useState } from 'react';
-import { Storage } from '../App.tsx';
+import { Storage } from '../../App.tsx';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../Navigation/MainNavigation.tsx';
-import Toaster from '../plugins/Toaster.ts';
+import { RootStackParamList } from '../../Navigation/LandingNavigation.tsx';
+import Toaster from '../../plugins/Toaster.ts';
 import { Keyboard } from 'react-native';
 
 function LoginScreen() {
@@ -18,7 +18,9 @@ function LoginScreen() {
         if (value.length === 5) {
             Keyboard.dismiss();
             if (value === Storage.PIN) {
-                navigation.navigate('Home');
+                navigation.navigate('Home', {
+                    screen: 'Home',
+                });
                 return;
             }
 

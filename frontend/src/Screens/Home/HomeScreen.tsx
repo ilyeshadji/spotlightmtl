@@ -1,13 +1,10 @@
-import styled from 'styled-components/native';
 import { useEffect, useState } from 'react';
-import Toaster from '../plugins/Toaster.ts';
-import { eventApi } from '../api';
-import ScreenContainer from '../Components/UI Elements/ScreenContainer.tsx';
-import Event, { EventType } from '../Components/Events/Event.tsx';
+import Toaster from '../../plugins/Toaster.ts';
+import { eventApi } from '../../api';
 import { AxiosError } from 'axios';
-import Loader from '../Components/UI Elements/Loader.tsx';
-import NoNetwork from '../Components/Home/NoNetwork.tsx';
-import WithNetwork from '../Components/Home/WithNetwork.tsx';
+import Loader from '../../Components/UI Elements/Loader.tsx';
+import NoNetwork from '../../Components/Home/NoNetwork.tsx';
+import WithNetwork from '../../Components/Home/WithNetwork.tsx';
 
 function HomeScreen() {
     const [events, setEvents] = useState([]);
